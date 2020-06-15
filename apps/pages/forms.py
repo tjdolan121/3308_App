@@ -1,4 +1,4 @@
-# apps/pages/form.py
+# apps/pages/forms.py
 from django import forms
 from django.forms import ModelForm
 from .models import Trip
@@ -13,7 +13,7 @@ class DateInput(forms.DateInput):
 class TripCreateForm(ModelForm):
     class Meta:
         model = Trip
-        fields = '__all__'
+        fields = ['trip_location', 'trip_name', 'trip_start', 'trip_end']
         widgets = {
             'trip_start': DateInput(),
             'trip_end': DateInput(),
